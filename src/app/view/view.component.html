@@ -1,0 +1,69 @@
+<app-header></app-header>
+<div class="height" fxlayout='column' fxlayoutAlign='center center'>
+    <div fxFlex>
+        <mat-table [dataSource]="dataSource" matSort>
+
+            <!-- ID Column -->
+            <ng-container matColumnDef="Univ-Name">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Univ-Name </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.uniname}} </mat-cell>
+            </ng-container>
+        
+            <!-- Progress Column -->
+            <ng-container matColumnDef="Registration Date">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Registration-Date </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.registrationDate}} </mat-cell>
+            </ng-container>
+        
+            <!-- Name Column -->
+            <ng-container matColumnDef="Expiry Date">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> Expiry Date </mat-header-cell>
+              <mat-cell *matCellDef="let row"> {{row.expiryDate}} </mat-cell>
+            </ng-container>
+        
+            <!-- Color Column -->
+            <ng-container matColumnDef="imgUrl">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> imgUrl </mat-header-cell>
+              <mat-cell *matCellDef="let row" > {{row.imgUrl}} </mat-cell>
+            </ng-container>
+            <!-- Color Column -->
+            <ng-container matColumnDef="No of Students">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> No of Students </mat-header-cell>
+              <mat-cell *matCellDef="let row" > {{row.NoOfStudents}} </mat-cell>
+            </ng-container>
+            <!-- Color Column -->
+            <ng-container matColumnDef="email">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> email </mat-header-cell>
+              <mat-cell *matCellDef="let row" > {{row.email}} </mat-cell>
+            </ng-container>
+            <!-- Color Column -->
+            <ng-container matColumnDef="webUrl">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> webUrl </mat-header-cell>
+              <mat-cell *matCellDef="let row" > {{row.webUrl}} </mat-cell>
+            </ng-container>
+            <!-- Color Column -->
+            <ng-container matColumnDef="contact number">
+              <mat-header-cell *matHeaderCellDef mat-sort-header> contact number </mat-header-cell>
+              <mat-cell *matCellDef="let row" > {{row.contactNo}} </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="edit">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Edit </mat-header-cell>
+                <mat-cell *matCellDef="let row" > <button (click)="openDialog(row)" mat-flat-button color="primary">Edit</button> </mat-cell>
+              </ng-container>
+        
+              <ng-container matColumnDef="delete">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Delete </mat-header-cell>
+                <mat-cell *matCellDef="let row" > <button (click)="opendDialog(row._id)" mat-flat-button color="warn">Delete</button> </mat-cell>
+              </ng-container>
+
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+          </mat-table>
+        
+          <mat-paginator [pageSize]="[5]"></mat-paginator>
+        
+    </div>
+
+</div>

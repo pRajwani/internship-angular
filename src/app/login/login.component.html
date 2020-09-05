@@ -1,0 +1,15 @@
+<div class="div" fxLayout='column'  fxLayoutAlign="center center">
+<div class="div2" fxLayout='column'  fxLayoutAlign="center center">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter UserId</mat-label>
+        <input  matInput type="text" [(ngModel)]="userId">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Enter Password</mat-label>
+        <input  matInput type="password" [(ngModel)]="password">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)='login()'>Login</button>
+    </div> 
+</div>

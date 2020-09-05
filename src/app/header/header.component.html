@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" >
+    <mat-toolbar-row>
+        <button mat-raised-button color="none" routerLink='/add' >Add</button>
+        <button class="gap" mat-raised-button color="none" routerLink='/view' >View</button>
+        <span  class="right "></span>
+        <span *ngIf="user">Hello, {{user}}
+            <button mat-raised-button color="none" class="gap" (click)='logout()'>LogOut</button>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>

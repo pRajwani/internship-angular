@@ -1,0 +1,56 @@
+<app-header></app-header>
+<div class="division" fxLayoutAlign='center center' fxLayout="column">
+    <h1>Enter University Detials</h1>
+    <mat-divider></mat-divider>
+    <div fxLayout='row' fxLayoutAlign='center center'>
+        <div fxLayout='column' fxFlex="50" fxLayoutAlign='center center' >
+        <mat-form-field appearance="outline">
+            <mat-label>Enter University Name</mat-label>
+            <input matInput type="text" [(ngModel)]="uniname">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Registration Date</mat-label>
+            <input matInput [matDatepicker]="dp2" [(ngModel)]="registrationDate" disabled>
+            <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+            <mat-datepicker #dp2 disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Expiry Date</mat-label>
+            <input matInput [matDatepicker]="dp3" [(ngModel)]="expiryDate" disabled>
+            <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+            <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Image Url</mat-label>
+            <input matInput type="text" [(ngModel)]="imgUrl">
+        </mat-form-field>
+        </div>
+
+        <div fxLayout='column' fxFlex fxFlexOffset="10" fxLayoutAlign='center center'>
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Number of Students</mat-label>
+            <input matInput type="text" [(ngModel)]="NoOfStudents">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Email</mat-label>
+            <input matInput type="text" [(ngModel)]="email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Web-Url</mat-label>
+            <input matInput type="text" [(ngModel)]="webUrl">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Enter Contact number</mat-label>
+            <input matInput type="text" [(ngModel)]="contactNo">
+        </mat-form-field>
+        </div>
+    </div>
+    <div fxLayout='row' >
+        <button mat-raised-button color='primary' (click)="createNew()">Submit</button>
+    </div>
+</div>
